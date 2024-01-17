@@ -30,8 +30,3 @@ class MyRestaurantMenu:
             return f"{item_name} deleted from the menu for {restaurant_name}."
         else:
             return f"{item_name} not found in the menu for {restaurant_name}."
-
-# Usage example:
-my_menu = MyRestaurantMenu()
-result = my_menu.add_menu_item("My Restaurant", "Dish1", "Delicious dish", 15.99)
-print(result)
