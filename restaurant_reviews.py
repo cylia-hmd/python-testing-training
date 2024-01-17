@@ -10,8 +10,14 @@ class RestaurantReviews:
 
     def get_review(self, restaurant):
         return self.reviews.get(restaurant, "Review not found.")
-
+   
     def update_review(self, restaurant, new_review_text, new_rating):
         if restaurant not in self.reviews:
             return "Review not found."
         return self.add_review(restaurant, new_review_text, new_rating)
+    
+    def delete_review(self, restaurant):
+        if restaurant not in self.reviews:
+            raise ValueError("Review not found to delete.")
+        del self.reviews[restaurant]
+        return "Review deleted for {}.".format(restaurant)   
